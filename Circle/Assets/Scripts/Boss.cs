@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-    public HealthBar healthBar;
+    public int BossMaxHealth = 1000;
+    public int BossCurrentHealth;
+    public HealthBar BossHealthBar;
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        BossCurrentHealth = BossMaxHealth;
+        BossHealthBar.SetMaxHealth(BossMaxHealth);
     }
 
     // Update is called once per frame
@@ -19,12 +19,20 @@ public class Boss : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            TakeDamage(10);
+            BossTakeDamage(25);
         }
     }
-    void TakeDamage(int damage)
+    public void BossTakeDamage(int damage)
     {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        BossCurrentHealth -= damage;
+        BossHealthBar.SetHealth(BossCurrentHealth);
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            BossTakeDamage(25);
+
+        }
     }
 }

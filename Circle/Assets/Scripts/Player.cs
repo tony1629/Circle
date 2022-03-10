@@ -5,39 +5,35 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private bool jumpKeyWasPressed;
-    private float horizontalInput;
-    private Rigidbody rigidbodyComponent;
-    [SerializeField] private Transform groundCheckTransform = null;
-    [SerializeField]private LayerMask playerMask;
+    public int PlayerMaxHealth = 1000;
+    public int PlayerCurrentHealth;
+    public HealthBar PlayerHealthBar;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbodyComponent = GetComponent<Rigidbody>();
+        PlayerCurrentHealth = PlayerMaxHealth;
+        PlayerHealthBar.SetMaxHealth(PlayerMaxHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            jumpKeyWasPressed = true;
+            PlayerTakeDamage(25);
         }
-        horizontalInput = Input.GetAxis("Horizontal");
-    } 
-    private void FixedUpdate()
-    {
-        rigidbodyComponent.velocity = new Vector3(horizontalInput, rigidbodyComponent.velocity.y, 0);
-        if(Physics.OverlapSphere(groundCheckTransform.position,0.1f,playerMask).Length==0)
-        {
-            return;
-        }
-        if (jumpKeyWasPressed)
-        {
-            rigidbodyComponent.AddForce(Vector3.up * 3, ForceMode.VelocityChange);
-            jumpKeyWasPressed = false;
-        }
-        
     }
-   
+    void PlayerTakeDamage(int damage)
+    {
+        PlayerCurrentHealth -= damage;
+        PlayerHealthBar.SetHealth(PlayerCurrentHealth);
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Boss")
+        {
+            
+
+        }
+    }
 }    
