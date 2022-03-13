@@ -22,7 +22,7 @@ namespace AL
         [SerializeField]
         float movementSpeed = 5;
         [SerializeField]
-        float rotationSpeed = 10;
+        float rotationSpeed = 12;
 
         // Start is called before the first frame update
         void Start()
@@ -50,6 +50,8 @@ namespace AL
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidBody.velocity = projectedVelocity;
+
+            animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0);
 
             if (animatorHandler.canRotate)
             {
