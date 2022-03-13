@@ -44,6 +44,7 @@ namespace AL
             moveDirection = cameraObject.forward * inputHandler.vertical;
             moveDirection += cameraObject.right * inputHandler.horizontal;
             moveDirection.Normalize();
+            moveDirection.y = 0;
 
             float speed = movementSpeed;
             moveDirection *= speed;
@@ -61,6 +62,7 @@ namespace AL
         }
 
         #region Movement
+
         Vector3 normalVector;
         Vector3 targetPosition;
 
