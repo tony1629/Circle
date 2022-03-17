@@ -19,7 +19,7 @@ void Start()
 
 void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        
         {
             DummyTakeDamage(25);
         }
