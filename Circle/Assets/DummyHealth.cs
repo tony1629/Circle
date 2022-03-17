@@ -21,7 +21,7 @@ void Update()
     {
         
         {
-            DummyTakeDamage(25);
+      
         }
     }
     public void DummyTakeDamage(int damage)
