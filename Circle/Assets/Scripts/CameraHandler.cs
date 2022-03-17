@@ -45,6 +45,8 @@ namespace AL
             Vector3 targetPosition = Vector3.SmoothDamp
                 (myTransform.position, targetTransform.position, ref cameraFollowVelocity, delta / followSpeed);
             myTransform.position = targetPosition;
+
+            HandleCameraCollisions(delta);
         }
 
         public void HandleCameraRotation(float delta, float mouseXInput, float mouseYInput)
@@ -73,11 +75,19 @@ namespace AL
             Vector3 direction = cameraTransform.position - cameraPivotTransform.position;
             direction.Normalize();
 
-            if (Physics.SphereCast(cameraPivotTransform.position,cameraSphereRadius, direction, out hit, Mathf.Abs(targtePosition), ignoreLayers))
+            if (Physics.SphereCast(cameraPivotTransform.position,cameraSphereRadius, direction, out hit, Mathf.Abs(targetPosition), ignoreLayers))
             {
                 float dis = Vector3.Distance(cameraPivotTransform.position, hit.point);
                 targetPosition = -(dis - cameraCollisionOffset);
             }
+
+            if (Mathf.Abs(targetPosition) < minimumCollisionOffset)
+            {
+                targetPosition = -minimumCollisionOffset;
+            }
+
+            cameraTransformPosition.z = Mathf.Lerp(cameraTransform.localPosition.z, targetPosition, delta / 0.2f);
+            cameraTransform.localPosition = cameraTransformPosition;
         }
     }
 }
