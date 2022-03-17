@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - dummy
+  - john
+  - Dummy
   layers:
   - Default
   - TransparentFX
