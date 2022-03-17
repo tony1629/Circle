@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\BossHealth.cs" />
     <Compile Include="Assets\Scripts\Boss_Run.cs" />
+    <Compile Include="Assets\SiuniaevCharacters\02_Golem\Scripts\CharacterRotator.cs" />
+    <Compile Include="Assets\SiuniaevCharacters\02_Golem\Scripts\AnimationButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
