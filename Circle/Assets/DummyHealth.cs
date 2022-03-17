@@ -8,14 +8,16 @@ public class DummyHealth : MonoBehaviour
     public int DummyCurrentHealth;
     public HealthBar DummyHealthBar;
     // Start is called before the first frame update
-    void Start()
+    
+void Start()
     {
         DummyCurrentHealth = DummyMaxHealth;
         DummyHealthBar.SetMaxHealth(DummyMaxHealth);
     }
 
     // Update is called once per frame
-    void Update()
+
+void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {

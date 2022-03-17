@@ -407,7 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DummyMaxHealth: 1000
   DummyCurrentHealth: 0
-  DummyHealthBar: {fileID: 0}
+  DummyHealthBar: {fileID: 1022448968}
 --- !u!1 &1022448963
 GameObject:
   m_ObjectHideFlags: 0
