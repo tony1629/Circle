@@ -1130,8 +1130,8 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_BaseOffset: 0.5
+  m_WalkableMask: 3
   m_ObstacleAvoidanceType: 4
 --- !u!114 &764015741
 MonoBehaviour:
@@ -1140,13 +1140,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764015733}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60dea98e460af95408e45494eefa787d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Boss: {fileID: 764015740}
-  Player: {fileID: 1945151514}
+  Player: {fileID: 1211740588}
 --- !u!1 &1211740583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3506830212016580170, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
@@ -1391,8 +1391,3 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!4 &1945151514 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3358656866151034872, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
-  m_PrefabInstance: {fileID: 116166858}
-  m_PrefabAsset: {fileID: 0}
