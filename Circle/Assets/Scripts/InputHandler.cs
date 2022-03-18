@@ -14,6 +14,7 @@ namespace AL
 
         public bool b_input;
         public bool rollFlag;
+        public bool isInteracting;
 
         PlayerControls inputActions;
         CameraHandler cameraHandler;

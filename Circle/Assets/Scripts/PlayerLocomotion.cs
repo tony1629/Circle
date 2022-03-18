@@ -95,7 +95,7 @@ namespace AL
 
         public void HandleRollingAndSprinting(float delta)
         {
-            if (animatorHandler.anim.GetBool("IsInteracting"))
+            if (animatorHandler.anim.GetBool("isInteracting"))
                 return;
             
             if (inputHandler.rollFlag)
@@ -105,7 +105,7 @@ namespace AL
 
                 if (inputHandler.moveAmount > 0)
                 {
-                    animatorHandler.PlayTargetAnimation("Roll", true);
+                    animatorHandler.PlayTargetAnimation("Rolling", true);
                     moveDirection.y = 0;
                     Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
                     myTransform.rotation = rollRotation;
