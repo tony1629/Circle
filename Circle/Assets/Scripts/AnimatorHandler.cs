@@ -75,6 +75,13 @@ namespace AL
 
         }
 
+        public void PlayTargetAnimation(string targetAnim, bool IsInteracting)
+        {
+            anim.applyRootMotion = IsInteracting;
+            anim.SetBool("IsInteracting", IsInteracting);
+            anim.CrossFade(targetAnim, 0.2f);
+        }
+
         public void CanRotate()
         {
             canRotate = true;
