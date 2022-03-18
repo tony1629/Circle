@@ -28,8 +28,14 @@ public class BossHealth : MonoBehaviour
 			Die();
 		}
 	}
-
-	void Die()
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+			TakeDamage(25);
+        }
+    }
+    void Die()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
 		Destroy(gameObject);
