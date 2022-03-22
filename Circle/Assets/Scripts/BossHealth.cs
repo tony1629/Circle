@@ -12,10 +12,10 @@ public class BossHealth : MonoBehaviour
 	public GameObject deathEffect;
 
 	public bool isInvulnerable = false;
-	void Start()
+	private void Start()
 	{
 		BossCurrentHealth = BossMaxhealth;
-		BossHealthBar.SetMaxHealth(BossMaxhealth);
+        BossHealthBar.SetMaxHealth(BossMaxhealth);
 	}
     public void TakeDamage(int damage)
 	{
