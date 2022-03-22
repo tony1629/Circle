@@ -5,25 +5,31 @@ using UnityEngine;
 public class BossHealth : MonoBehaviour
 {
 
-	public int health = 500;
+	public int BossMaxhealth = 500;
+	public int BossCurrentHealth;
+	public HealthBar BossHealthBar;
 
 	public GameObject deathEffect;
 
 	public bool isInvulnerable = false;
-
-	public void TakeDamage(int damage)
+	void Start()
+	{
+		BossCurrentHealth = BossMaxhealth;
+		BossHealthBar.SetMaxHealth(BossMaxhealth);
+	}
+    public void TakeDamage(int damage)
 	{
 		if (isInvulnerable)
 			return;
 
-		health -= damage;
-
-		if (health <= 200)
+		BossCurrentHealth -= damage;
+	
+		if (BossCurrentHealth <= 200)
 		{
 			GetComponent<Animator>().SetBool("IsEnraged", true);
 		}
 
-		if (health <= 0)
+		if (BossCurrentHealth <= 0)
 		{
 			Die();
 		}
