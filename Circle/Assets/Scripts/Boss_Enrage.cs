@@ -21,4 +21,5 @@ public class Boss_Enrage : StateMachineBehaviour
 	{
 		animator.GetComponent<BossHealth>().isInvulnerable = false;
 	}
+	//Make boss gain health when under a certain HP and get stronger
 }
