@@ -28,6 +28,7 @@ public class BossHealth : MonoBehaviour
 		if (BossCurrentHealth <= 200)
 		{
 			GetComponent<Animator>().SetBool("IsEnraged", true);
+			BossCurrentHealth-=(damage/2);
 		}
 
 		if (BossCurrentHealth <= 0)
@@ -40,8 +41,14 @@ public class BossHealth : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
 			TakeDamage(25);
+			
         }
     }
+	public void DoDamage(int damage)
+    {
+		
+    }
+	
     void Die()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);

@@ -402,6 +402,14 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2960802168919317403, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+      propertyPath: rigidBody
+      value: 
+      objectReference: {fileID: 1211740586}
+    - target: {fileID: 2960802168919317403, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+      propertyPath: normalCamera
+      value: 
+      objectReference: {fileID: 744645841}
     - target: {fileID: 2960802169284313622, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1398,6 +1406,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3506830212016580170, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
   m_PrefabInstance: {fileID: 116166858}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1211740586 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2960802168919317401, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+  m_PrefabInstance: {fileID: 116166858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1211740588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5590391514773203382, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
@@ -1416,7 +1429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 100124, guid: 0a205e82d4075b346b912ccfe0a0bfd2, type: 3}
 --- !u!1 &1628406303
 GameObject:
   m_ObjectHideFlags: 0
