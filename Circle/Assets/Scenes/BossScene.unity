@@ -391,6 +391,10 @@ PrefabInstance:
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 2960802168919317400, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+      propertyPath: m_Height
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960802168919317400, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -512,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5590391514773203382, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.176621
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5590391514773203382, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1118,7 +1122,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764015733}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5

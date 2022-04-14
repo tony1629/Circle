@@ -72,7 +72,7 @@ namespace AL
 
         private void HandleRollInput(float delta)
         {
-            b_input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
+            b_input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Performed;
 
             if (b_input)
             {
