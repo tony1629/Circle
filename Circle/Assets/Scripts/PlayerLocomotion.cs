@@ -38,17 +38,6 @@ namespace AL
             animatorHandler.Initialize();
         }
 
-        public void Update()
-        {
-            float delta = Time.deltaTime;
-
-            isSprinting = inputHandler.b_input;
-            inputHandler.TickInput(delta);
-            HandleMovement(delta);
-            HandleRollingAndSprinting(delta);
-
-        }
-
         #region Movement
 
         Vector3 normalVector;
