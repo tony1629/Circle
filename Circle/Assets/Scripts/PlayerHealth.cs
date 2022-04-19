@@ -21,7 +21,13 @@ public class PlayerHealth : MonoBehaviour
 			Die();
 		}
 	}
-
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.tag == "Boss")
+		{
+			TakeDamage(25);
+		}
+	}
 	void Die()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

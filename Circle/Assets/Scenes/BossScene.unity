@@ -938,6 +938,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8753619234690991416, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 8753619234851899936, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
       propertyPath: m_Layer
       value: 6
