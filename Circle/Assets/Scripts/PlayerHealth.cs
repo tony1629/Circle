@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-	double bossDamage;
+	
 	public int health = 100;
 
 	public GameObject deathEffect;
@@ -21,10 +21,14 @@ public class PlayerHealth : MonoBehaviour
 			Die();
 		}
 	}
-	public PlayerHealth(double bossDamage)
-    {
-		this.bossDamage = bossDamage;
-    }
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.tag == "Boss")
+		{
+			TakeDamage(25);
+			//playerTakesDamage;
+		}
+	}
 	void Die()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

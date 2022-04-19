@@ -11,9 +11,7 @@ public class BossHealth : MonoBehaviour
 
 	public GameObject deathEffect;
 
-	PlayerHealth playerTakesDamage = new PlayerHealth(25.0);
-
-	public bool isInvulnerable = false;
+    public bool isInvulnerable = false;
 	private void Start()
 	{
 		BossCurrentHealth = BossMaxhealth;
@@ -36,7 +34,7 @@ public class BossHealth : MonoBehaviour
 		{
 			Die();
 		}
-	}
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
