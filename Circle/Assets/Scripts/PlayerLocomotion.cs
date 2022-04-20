@@ -6,6 +6,7 @@ namespace AL
 {
     public class PlayerLocomotion : MonoBehaviour
     {
+        PlayerManager playerManager;
         Transform cameraObject;
         InputHandler inputHandler;
         Vector3 moveDirection;
@@ -18,18 +19,28 @@ namespace AL
         public Rigidbody rigidBody;
         public GameObject normalCamera;
 
-        [Header("Stats")]
+        [Header("Ground & Air Detection Stats")]
+        [SerializeField]
+        float groundDetectionRayStartPoint = 0.5f;
+        [SerializeField]
+        float minimumDistanceNeededToBeginFall;
+        [SerializeField]
+        float groundDirectionRayDistance = 0.2f;
+        LayerMask ignoreForGroundCheck;
+        public float inAirTimer;
+
+
+        [Header("Movement Stats")]
         [SerializeField]
         float movementSpeed = 5;
         float sprintSpeed = 7;
         [SerializeField]
         float rotationSpeed = 12;
 
-        public bool isSprinting;
-
         // Start is called before the first frame update
         void Start()
         {
+            playerManager = GetComponent<PlayerManager>();
             rigidBody = GetComponent<Rigidbody>();
             inputHandler = GetComponent<InputHandler>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
@@ -82,7 +93,7 @@ namespace AL
             if (inputHandler.sprintFlag)
             {
                 speed = sprintSpeed;
-                isSprinting = true;
+                playerManager.isSprinting = true;
                 moveDirection *= speed;
             }
             else
@@ -94,7 +105,7 @@ namespace AL
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidBody.velocity = projectedVelocity;
 
-            animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, isSprinting);
+            animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
 
             if (animatorHandler.canRotate)
             {

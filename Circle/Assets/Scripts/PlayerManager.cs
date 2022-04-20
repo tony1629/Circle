@@ -14,6 +14,11 @@ namespace AL
 
         public bool isInteracting;
 
+        [Header("PlayerFlags")]
+        public bool isSprinting;
+        public bool isInAir;
+        public bool isGrounded;
+
         private void Awake()
         {
             cameraHandler = CameraHandler.singleton;
@@ -33,13 +38,10 @@ namespace AL
             float delta = Time.deltaTime;
 
             isInteracting = anim.GetBool("isInteracting");
-            inputHandler.rollFlag = false;
-            inputHandler.sprintFlag = false;
 
-            playerLocomotion.isSprinting = inputHandler.b_input;
             inputHandler.TickInput(delta);
             playerLocomotion.HandleMovement(delta);
-            HandleRollingAndSprinting(delta);
+            playerLocomotion.HandleRollingAndSprinting(delta);
         }
 
         private void FixedUpdate()
@@ -51,6 +53,13 @@ namespace AL
                 cameraHandler.FollowTarget(delta);
                 cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
             }
+        }
+
+        private void LateUpdate()
+        {
+            inputHandler.rollFlag = false;
+            inputHandler.sprintFlag = false;
+            isSprinting = inputHandler.b_input;
         }
     }
 }

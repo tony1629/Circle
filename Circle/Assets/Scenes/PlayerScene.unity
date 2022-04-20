@@ -501,6 +501,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdec97fdcaef544589dc8d19144e2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInteracting: 0
+  isSprinting: 0
+  isInAir: 0
+  isGrounded: 0
 --- !u!1 &1479451992
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +991,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2960802168919317400, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+      propertyPath: m_Height
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2960802169284313622, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
       propertyPath: m_Avatar
       value: 
