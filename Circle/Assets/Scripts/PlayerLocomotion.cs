@@ -36,6 +36,8 @@ namespace AL
         float sprintSpeed = 7;
         [SerializeField]
         float rotationSpeed = 12;
+        [SerializeField]
+        float fallingSpeed = 45;
 
         // Start is called before the first frame update
         void Start()
@@ -47,6 +49,9 @@ namespace AL
             cameraObject = Camera.main.transform;
             myTransform = transform;
             animatorHandler.Initialize();
+
+            playerManager.isGrounded = true;
+            ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
         }
 
         #region Movement
@@ -136,6 +141,77 @@ namespace AL
                 }
 
             }
+        }
+
+        public void HandleFalling(float delta, Vector3 moveDirection)
+        {
+            playerManager.isGrounded = false;
+            RaycastHit hit;
+            Vector3 origin = myTransform.position;
+            origin.y += groundDetectionRayStartPoint
+
+            if(Physics.Raycast(origin, myTransform.forward, out hit, 0.4f))
+            {
+                moveDirection = Vector3.zero;
+            }
+
+            if (playerManager.isInAir)
+            {
+                rigidBody.AddForce(-Vector3.up * fallingSpeed);
+                rigidBody.AddForce(moveDirection * fallingSpeed / 5f);
+            }
+
+            Vector3 dir = moveDirection;
+            dir.Normalize();
+            origin = origin + dir * groundDirectionRayDistance;
+
+            targetPosition = myTransform.position;
+
+            Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
+            if (Physics.Raycast(origin, -Vector3.up, out hit, minimumDistanceNeededToBeginFall, ignoreForGroundCheck))
+            {
+                normalVector = hit.normal;
+                Vector3 tp = hit.point;
+                playerManager.isGrounded = true;
+                targetPosition.y = tp.y;
+
+                if (playerManager.isInAir)
+                {
+                    if(inAirTimer > 0.5f)
+                    {
+                        Debug.Log("You were in the air for " + inAirTimer);
+                        animatorHandler.playTargetAnimation("Land", true);
+                    }
+                    else
+                    {
+                        animatorHandler.PlayTargetAnimation("Empty", false);
+                        inAirTimer = 0;
+                    }
+
+                    playerManager.isInAir = false;
+                }
+            }
+            else
+            {
+                if (playerManager.isGrounded)
+                {
+                    playerManager.isGrounded = false;
+                }
+
+                if(playerManager.isInAir == false)
+                {
+                    if(playerManager.isInteracting == false)
+                    {
+                        animatorHandler.PlayTargetAnimation("Falling", true);
+                    }
+
+                    Vector3 vel = rigidBody.velocity;
+                    vel.Normalize();
+                    rigidBody.velocity = vel * (movementSpeed / 2);
+                    playerManager.isInAir = true;
+                }
+            }
+
         }
 
         #endregion
