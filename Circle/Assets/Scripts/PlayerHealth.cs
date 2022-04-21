@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
 
 	public GameObject deathEffect;
 
-	public void TakeDamage(int damage)
+	public void PlayerTakeDamage(int damage)
 	{
 		health -= damage;
 
@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Boss")
 		{
-			TakeDamage(25);
+			//PlayerTakeDamage(25);
 		}
 	}
 	void Die()

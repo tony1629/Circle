@@ -7,8 +7,9 @@ public class BossHealth : MonoBehaviour
 
 	public int BossMaxhealth = 500;
 	public int BossCurrentHealth;
+	public int BossDamage = 5;
 	public HealthBar BossHealthBar;
-
+	PlayerHealth playerTakesDamage = new PlayerHealth();
 	public GameObject deathEffect;
 
 	public bool isInvulnerable = false;
@@ -17,7 +18,7 @@ public class BossHealth : MonoBehaviour
 		BossCurrentHealth = BossMaxhealth;
         BossHealthBar.SetMaxHealth(BossMaxhealth);
 	}
-    public void TakeDamage(int damage)
+    public void BossTakeDamage(int damage)
 	{
 		if (isInvulnerable)
 			return;
@@ -39,7 +40,8 @@ public class BossHealth : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-			TakeDamage(25);
+			BossTakeDamage(25);
+			playerTakesDamage.PlayerTakeDamage(BossDamage);
         }
     }
     void Die()
