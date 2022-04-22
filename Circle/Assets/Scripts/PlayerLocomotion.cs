@@ -9,7 +9,7 @@ namespace AL
         PlayerManager playerManager;
         Transform cameraObject;
         InputHandler inputHandler;
-        Vector3 moveDirection;
+        public Vector3 moveDirection;
 
         [HideInInspector]
         public Transform myTransform;
@@ -148,7 +148,7 @@ namespace AL
             playerManager.isGrounded = false;
             RaycastHit hit;
             Vector3 origin = myTransform.position;
-            origin.y += groundDetectionRayStartPoint
+            origin.y += groundDetectionRayStartPoint;
 
             if(Physics.Raycast(origin, myTransform.forward, out hit, 0.4f))
             {
@@ -180,7 +180,7 @@ namespace AL
                     if(inAirTimer > 0.5f)
                     {
                         Debug.Log("You were in the air for " + inAirTimer);
-                        animatorHandler.playTargetAnimation("Land", true);
+                        animatorHandler.PlayTargetAnimation("Land", true);
                     }
                     else
                     {
@@ -209,6 +209,18 @@ namespace AL
                     vel.Normalize();
                     rigidBody.velocity = vel * (movementSpeed / 2);
                     playerManager.isInAir = true;
+                }
+            }
+
+            if (playerManager.isGrounded)
+            {
+                if(playerManager.isInteracting || inputHandler.moveAmount > 0)
+                {
+                    myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime);
+                }
+                else
+                {
+                    myTransform.position = targetPosition;
                 }
             }
 
