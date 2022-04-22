@@ -33,6 +33,9 @@ public class MenuController : MonoBehaviour
         {
             noSavedGameDialog.SetActive(true);
         }
+        {
+
+        }
     }
     public void ExitButton()
     {
@@ -51,7 +54,8 @@ public class MenuController : MonoBehaviour
     public IEnumerator ConfirmationBox()
     {
         confirmationPrompt.setActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new, WaitForSeconds(2);
         confirmationPrompt.setActive(false);
     }
 }
+
