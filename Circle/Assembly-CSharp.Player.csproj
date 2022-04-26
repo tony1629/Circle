@@ -66,12 +66,12 @@
     <Compile Include="Assets\Scripts\AnimatorHandler.cs" />
     <Compile Include="Assets\Scripts\PlayerLocomotion.cs" />
     <Compile Include="Assets\SiuniaevCharacters\02_Golem\Scripts\AnimationButton.cs" />
+    <Compile Include="Assets\Boss Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\HealthBar.cs" />
     <Compile Include="Assets\Boss Scripts\Boss.cs" />
     <Compile Include="Assets\Boss Scripts\BossHealth.cs" />
     <Compile Include="Assets\Boss Scripts\Boss_Run.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
-    <Compile Include="Assets\Boss Scripts\FollowPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\dummy.txt" />

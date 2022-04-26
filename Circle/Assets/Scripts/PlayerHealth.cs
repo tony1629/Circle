@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
-	public int health = 100;
+	public int health = 1000;
 
 	public GameObject deathEffect;
 
@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Boss")
 		{
-			//PlayerTakeDamage(25);
+			PlayerTakeDamage(10);
 		}
 	}
 	void Die()

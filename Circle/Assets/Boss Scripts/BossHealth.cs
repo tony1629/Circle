@@ -9,16 +9,16 @@ public class BossHealth : MonoBehaviour
 	public int BossCurrentHealth;
 	public int BossDamage = 5;
 	public HealthBar BossHealthBar;
-	PlayerHealth playerTakesDamage = new PlayerHealth();
+
 	public GameObject deathEffect;
 
 	public bool isInvulnerable = false;
 	private void Start()
 	{
 		BossCurrentHealth = BossMaxhealth;
-        BossHealthBar.SetMaxHealth(BossMaxhealth);
+		BossHealthBar.SetMaxHealth(BossMaxhealth);
 	}
-    public void BossTakeDamage(int damage)
+	public void BossTakeDamage(int damage)
 	{
 		if (isInvulnerable)
 			return;
@@ -36,15 +36,15 @@ public class BossHealth : MonoBehaviour
 			Die();
 		}
 	}
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.tag == "Player")
+		{
 			BossTakeDamage(25);
-			playerTakesDamage.PlayerTakeDamage(BossDamage);
-        }
-    }
-    void Die()
+
+		}
+	}
+	void Die()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
 		Destroy(gameObject);
