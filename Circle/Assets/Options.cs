@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMpro
+using TMPro;
 
-public class MenuController : MonoBehaviour
+public class Options : MonoBehaviour
 {
     [Header("Volume Setting")]
     [SerializeField] private Text volumeTextValue = null;
@@ -17,12 +17,12 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject noSavedGameDialog = null;
 
 
-    public void NewGameDialogYes()
+    public void NewGameDialogYes2()
     {
         SceneManager.LoadScene(_newGameLevel);
     }
 
-    public void LoadGameDialogYes()
+    public void LoadGameDialogYes2()
     {
         if (PlayerPrefs.HasKey("SavedLevel"))
         {
@@ -37,7 +37,7 @@ public class MenuController : MonoBehaviour
 
         }
     }
-    public void ExitButton()
+    public void ExitButton2()
     {
         Application.Quit();
     }
@@ -49,12 +49,12 @@ public class MenuController : MonoBehaviour
     public void VolumeApply()
     {
         PlayerPrefs.SetFloat("masterVolume", Audiolistener.volume);
-        //Show prompt
-    }   StartCoroutine(ConfirmationBox());
+        StartCoroutine(ConfirmationBox());
+    }   
     public IEnumerator ConfirmationBox()
     {
         confirmationPrompt.setActive(true);
-        yield return new, WaitForSeconds(2);
+        yield return new WaitForSeconds(2);
         confirmationPrompt.setActive(false);
     }
 }
