@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class FollowPlayer : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public Transform player;
+    public Transform Player;
     public LayerMask whatIsGround, whatIsPlayer;
     public float health;
     //patroling
@@ -22,16 +22,16 @@ public class FollowPlayer : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Player").transform;
+        Player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
     private void Update()
     {
+        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
     private void Patroling()
@@ -55,13 +55,13 @@ public class FollowPlayer : MonoBehaviour
     }
     private void ChasePlayer()
     {
-        agent.SetDestination(player.position);
+        agent.SetDestination(Player.position);
     }
     private void AttackPlayer()
     {
         //MAke sure enemy doesn't move
         agent.SetDestination(transform.position);
-        transform.LookAt(player);
+        transform.LookAt(Player);
         if (!alreadyAttacked)
         {
             //Attack code here

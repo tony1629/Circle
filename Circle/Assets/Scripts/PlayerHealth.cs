@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Boss")
 		{
-			PlayerTakeDamage(10);
+			PlayerTakeDamage(1);
 		}
 	}
 	void Die()
