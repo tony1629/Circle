@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class FollowPlayer : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public Transform Player;
+    public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
     public float health;
     //patroling
@@ -22,7 +22,7 @@ public class FollowPlayer : MonoBehaviour
 
     private void Awake()
     {
-        Player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
     private void Update()
@@ -55,13 +55,13 @@ public class FollowPlayer : MonoBehaviour
     }
     private void ChasePlayer()
     {
-        agent.SetDestination(Player.position);
+        agent.SetDestination(player.position);
     }
     private void AttackPlayer()
     {
         //MAke sure enemy doesn't move
         agent.SetDestination(transform.position);
-        transform.LookAt(Player);
+        transform.LookAt(player);
         if (!alreadyAttacked)
         {
             //Attack code here
