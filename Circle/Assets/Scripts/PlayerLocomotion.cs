@@ -23,7 +23,7 @@ namespace AL
         [SerializeField]
         float groundDetectionRayStartPoint = 0.5f;
         [SerializeField]
-        float minimumDistanceNeededToBeginFall;
+        float minimumDistanceNeededToBeginFall = 0.6f;
         [SerializeField]
         float groundDirectionRayDistance = 0.2f;
         LayerMask ignoreForGroundCheck;
@@ -32,8 +32,8 @@ namespace AL
 
         [Header("Movement Stats")]
         [SerializeField]
-        float movementSpeed = 5;
-        float sprintSpeed = 7;
+        float movementSpeed = 3.5f;
+        float sprintSpeed = 4.5f;
         [SerializeField]
         float rotationSpeed = 12;
         [SerializeField]
@@ -84,9 +84,10 @@ namespace AL
         public void HandleMovement(float delta)
         {
             if (inputHandler.rollFlag)
-            {
                 return;
-            }
+
+            if (playerManager.isInteracting)
+                return;
 
             moveDirection = cameraObject.forward * inputHandler.vertical;
             moveDirection += cameraObject.right * inputHandler.horizontal;
@@ -158,7 +159,7 @@ namespace AL
             if (playerManager.isInAir)
             {
                 rigidBody.AddForce(-Vector3.up * fallingSpeed);
-                rigidBody.AddForce(moveDirection * fallingSpeed / 5f);
+                rigidBody.AddForce(moveDirection * fallingSpeed / 10f);
             }
 
             Vector3 dir = moveDirection;
@@ -179,8 +180,9 @@ namespace AL
                 {
                     if(inAirTimer > 0.5f)
                     {
-                        Debug.Log("You were in the air for " + inAirTimer);
+                        Debug.Log("You were in the air for " + inAirTimer + " seconds.");
                         animatorHandler.PlayTargetAnimation("Land", true);
+                        inAirTimer = 0;
                     }
                     else
                     {
