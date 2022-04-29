@@ -37,10 +37,6 @@ public class Options : MonoBehaviour
 
         }
     }
-    public void ExitButton2()
-    {
-        Application.Quit();
-    }
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
