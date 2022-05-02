@@ -19,10 +19,12 @@ public class FollowPlayer : MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
-
+    Boss boss;
+    Rigidbody rb;
+    public float speed = 2.5f;
     private void Awake()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.FindWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
     private void Update()
@@ -56,6 +58,11 @@ public class FollowPlayer : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        boss.LookAtPlayer();
+
+        Vector3 target = new Vector3(player.position.x, rb.position.y, player.position.z);
+        Vector3 newPos = Vector3.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+        rb.MovePosition(newPos);
     }
     private void AttackPlayer()
     {

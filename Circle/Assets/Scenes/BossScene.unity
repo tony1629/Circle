@@ -1211,15 +1211,16 @@ MonoBehaviour:
     m_Bits: 128
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
   health: 1000
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 1
   timeBetweenAttacks: 1
-  sightRange: 2
-  attackRange: 2
+  sightRange: 0.2
+  attackRange: 0.1
   playerInSightRange: 0
   playerInAttackRange: 0
+  speed: 2.5
 --- !u!195 &764015740
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1556,7 +1557,7 @@ GameObject:
   - component: {fileID: 1672849253}
   - component: {fileID: 1672849257}
   - component: {fileID: 1672849258}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
