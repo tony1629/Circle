@@ -76,7 +76,7 @@ namespace AL
             }
             #endregion
 
-            if (isSprinting)
+            if (isSprinting && v != 0)
             {
                 v = 2;
                 h = horizontalMovement;
