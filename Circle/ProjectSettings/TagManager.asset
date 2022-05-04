@@ -13,11 +13,17 @@ TagManager:
   - Water
   - UI
   - Boss
+<<<<<<< Updated upstream
   - 
   - 
   - 
+=======
+  - whatIsGround
+  - whatIsPlayer
+  - Player
+>>>>>>> Stashed changes
   - Controller
-  - 
+  - Obstacles
   - 
   - 
   - 
