@@ -505,6 +505,53 @@ MonoBehaviour:
   isSprinting: 0
   isInAir: 0
   isGrounded: 0
+--- !u!1 &1438264385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438264386}
+  - component: {fileID: 1438264387}
+  m_Layer: 0
+  m_Name: Left Hand Override
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1438264386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438264385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2960802168990235464}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1438264387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438264385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c7e9a6f3b904f4496ffc4f1fd09a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentOverride: {fileID: 1438264386}
+  isLeftHandSlot: 1
+  isRightHandSlot: 0
+  currentWeaponModel: {fileID: 0}
 --- !u!1 &1479451992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,3 +1204,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+--- !u!4 &2960802168990235462 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4886582338144836289, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+  m_PrefabInstance: {fileID: 2960802168990235461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2960802168990235463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8221179644790306900, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+  m_PrefabInstance: {fileID: 2960802168990235461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2960802168990235464 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3433054875037434546, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+  m_PrefabInstance: {fileID: 2960802168990235461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2960802168990235465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5003519666248069758, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+  m_PrefabInstance: {fileID: 2960802168990235461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2960802168990235466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960802168990235463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c7e9a6f3b904f4496ffc4f1fd09a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentOverride: {fileID: 2960802168990235462}
+  isLeftHandSlot: 0
+  isRightHandSlot: 1
+  currentWeaponModel: {fileID: 0}
+--- !u!114 &2960802168990235467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960802168990235465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c7e9a6f3b904f4496ffc4f1fd09a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentOverride: {fileID: 2960802168990235464}
+  isLeftHandSlot: 1
+  isRightHandSlot: 0
+  currentWeaponModel: {fileID: 0}

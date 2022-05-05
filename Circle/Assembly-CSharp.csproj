@@ -49,7 +49,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\InputHandler.cs" />
-     <Compile Include="Assets\SiuniaevCharacters\02_Golem\Scripts\CharacterRotator.cs" />
+     <Compile Include="Assets\Art&amp;Animations\SiuniaevCharacters\02_Golem\Scripts\CharacterRotator.cs" />
      <Compile Include="Assets\Scripts\Boss_Enrage.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\CameraHandler.cs" />
@@ -60,10 +60,11 @@
      <Compile Include="Assets\Scripts\AnimatorHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerLocomotion.cs" />
      <Compile Include="Assets\Scripts\ResetIsInteracting.cs" />
-     <Compile Include="Assets\SiuniaevCharacters\02_Golem\Scripts\AnimationButton.cs" />
+     <Compile Include="Assets\Art&amp;Animations\SiuniaevCharacters\02_Golem\Scripts\AnimationButton.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Boss.cs" />
      <Compile Include="Assets\Scripts\BossHealth.cs" />
+     <Compile Include="Assets\Scripts\WeaponHolderSlot.cs" />
      <Compile Include="Assets\Scripts\Boss_Run.cs" />
      <None Include="Assets\dummy.txt" />
  <Reference Include="UnityEngine">
