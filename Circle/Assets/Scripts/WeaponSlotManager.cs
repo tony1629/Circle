@@ -25,7 +25,7 @@ namespace AL
             }
         }
 
-        public void LoadWeaponSlot(WeaponItem weaponItem, bool isLeft)
+        public void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)
         {
             if (isLeft)
             {
