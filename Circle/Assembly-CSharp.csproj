@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\InputHandler.cs" />
      <Compile Include="Assets\Art&amp;Animations\SiuniaevCharacters\02_Golem\Scripts\CharacterRotator.cs" />
+     <Compile Include="Assets\Scripts\PlayerInventory.cs" />
      <Compile Include="Assets\Scripts\Boss_Enrage.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\CameraHandler.cs" />
