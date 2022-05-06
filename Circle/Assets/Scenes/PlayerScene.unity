@@ -475,6 +475,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &828903445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828903446}
+  m_Layer: 0
+  m_Name: Left Hand Override
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &828903446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828903445}
+  m_LocalRotation: {x: -0.022091892, y: 0.1934369, z: 0.9806837, w: -0.018805863}
+  m_LocalPosition: {x: 0.001, y: -0.004, z: -0.018}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 315316731}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -22.245, y: -3.134, z: 182.813}
 --- !u!1 &1030988552
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,53 +571,6 @@ MonoBehaviour:
   isSprinting: 0
   isInAir: 0
   isGrounded: 0
---- !u!1 &1438264385
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1438264386}
-  - component: {fileID: 1438264387}
-  m_Layer: 0
-  m_Name: Left Hand Override
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1438264386
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438264385}
-  m_LocalRotation: {x: 0.037528593, y: 0.04951978, z: 0.8755491, w: 0.47911724}
-  m_LocalPosition: {x: 1.5952058, y: 0.31483796, z: 1.2860736}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 315316731}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 80.838, y: 106.935, z: 212.056}
---- !u!114 &1438264387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438264385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c7e9a6f3b904f4496ffc4f1fd09a86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentOverride: {fileID: 315316731}
-  isLeftHandSlot: 1
-  isRightHandSlot: 0
-  currentWeaponModel: {fileID: 0}
 --- !u!1 &1479451992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,7 +1278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c7e9a6f3b904f4496ffc4f1fd09a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentOverride: {fileID: 315316731}
+  parentOverride: {fileID: 828903446}
   isLeftHandSlot: 1
   isRightHandSlot: 0
   currentWeaponModel: {fileID: 0}
