@@ -136,7 +136,7 @@ namespace AL
             if (inputHandler.rollFlag)
             {
                 moveDirection = cameraObject.forward * inputHandler.vertical;
-                moveDirection = cameraObject.right * inputHandler.horizontal;
+                moveDirection += cameraObject.right * inputHandler.horizontal;
 
                 if (inputHandler.moveAmount > 0)
                 {

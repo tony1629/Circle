@@ -15,15 +15,26 @@ namespace AL
         public float mouseY;
 
         public bool b_input;
+        public bool rb_input;
+        public bool rt_input;
 
         public bool rollFlag;
         public bool sprintFlag;
         public float rollInputTimer;
 
         PlayerControls inputActions;
+        PlayerAttacker playerAttacker;
+        PlayerInventory playerInventory;
+
 
         Vector2 movementInput;
         Vector2 cameraInput;
+
+        private void Awake()
+        {
+            playerAttacker = GetComponent<PlayerAttacker>();
+            playerInventory = GetComponent<PlayerInventory>();
+        }
 
         public void OnEnable()
         {
@@ -46,6 +57,7 @@ namespace AL
         {
             MoveInput(delta);
             HandleRollInput(delta);
+
         }
 
         private void MoveInput(float delta)
@@ -75,6 +87,24 @@ namespace AL
                 }
 
                 rollInputTimer = 0;
+            }
+        }
+
+        private void AttackInput(float delta)
+        {
+            inputActions.PlayerActions.RB.performed += i => rb_input = true;
+            inputActions.PlayerActions.RT.performed += i => rt_input = true;
+
+            //RB input ([E] on keyboard) handles right hand light attack.
+            if (rb_input)
+            {
+                playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+            }
+
+            //RT input ([R] on keyboard) handles right hand heavy attack.
+            if (rt_input)
+            {
+                playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
             }
         }
 
