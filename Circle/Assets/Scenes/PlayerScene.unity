@@ -554,7 +554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightWeapon: {fileID: 11400000, guid: 154d9f747d9fe7145a142ccb7f0c5371, type: 2}
-  leftWeapon: {fileID: 11400000, guid: 154d9f747d9fe7145a142ccb7f0c5371, type: 2}
+  leftWeapon: {fileID: 0}
 --- !u!114 &1200566986
 MonoBehaviour:
   m_ObjectHideFlags: 0

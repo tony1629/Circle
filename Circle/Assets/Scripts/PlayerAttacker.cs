@@ -8,7 +8,7 @@ namespace AL
     {
         AnimatorHandler animatorHandler;
         
-        private void Awake()
+        private void Start()
         {
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }

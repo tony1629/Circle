@@ -57,6 +57,7 @@ namespace AL
         {
             MoveInput(delta);
             HandleRollInput(delta);
+            AttackInput(delta);
 
         }
 
