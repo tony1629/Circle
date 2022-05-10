@@ -5,10 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - player
-  - Dummy
-  - dummy
-  - Sword
-  - john
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -17,8 +14,8 @@ TagManager:
   - Water
   - UI
   - Boss
-  - 
-  - 
+  - whatIsGround
+  - whatIsPlayer
   - 
   - Controller
   - 
