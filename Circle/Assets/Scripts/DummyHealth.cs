@@ -22,7 +22,7 @@ void Start()
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "john")
+        if (other.gameObject.tag == "Sword")
         {
             DummyTakeDamage(25);
         }

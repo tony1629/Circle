@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - player
+  - Dummy
+  - dummy
+  - Sword
+  - john
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3506894205421573620}
   - component: {fileID: 3506894205424440788}
   - component: {fileID: 3506894205423343380}
-  - component: {fileID: 5477971907682662226}
   m_Layer: 0
   m_Name: MeleeWarriorSword
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5477971907682662226
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3506894205421144532}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.29117978, y: 1.3027447, z: 0.14509296}
-  m_Center: {x: -0.00022500832, y: 0.4403874, z: -0.00000004203691}
 --- !u!1 &4413096746564721682
 GameObject:
   m_ObjectHideFlags: 0
