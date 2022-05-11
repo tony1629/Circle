@@ -24,8 +24,9 @@ public class FollowPlayer : MonoBehaviour
     
 
     
-    Rigidbody rb;
-    Boss boss;
+    public Rigidbody rb;
+    public Boss boss;
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player").transform;

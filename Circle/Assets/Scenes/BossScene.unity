@@ -1317,6 +1317,8 @@ MonoBehaviour:
   playerInSightRange: 0
   playerInAttackRange: 0
   speed: 2.5
+  rb: {fileID: 764015735}
+  boss: {fileID: 764015741}
 --- !u!195 &764015740
 NavMeshAgent:
   m_ObjectHideFlags: 0
