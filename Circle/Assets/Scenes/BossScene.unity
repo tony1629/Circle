@@ -1286,7 +1286,7 @@ MonoBehaviour:
   BossCurrentHealth: 0
   BossDamage: 5
   BossHealthBar: {fileID: 1109900523}
-  deathEffect: {fileID: 100124, guid: 0a205e82d4075b346b912ccfe0a0bfd2, type: 3}
+  deathEffect: {fileID: 919132149155446097, guid: 6d63f48bf2bc2e64a9295d5b1a4b44bf, type: 3}
   isInvulnerable: 0
 --- !u!114 &764015739
 MonoBehaviour:
@@ -1339,6 +1339,20 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &764015741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764015733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be9a12e2a5c7cca40a03a212217d8cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1211740588}
+  isFlipped: 0
 --- !u!1 &855076245
 GameObject:
   m_ObjectHideFlags: 0
