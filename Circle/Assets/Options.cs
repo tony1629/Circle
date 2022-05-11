@@ -44,14 +44,14 @@ public class Options : MonoBehaviour
     }
     public void VolumeApply()
     {
-        PlayerPrefs.SetFloat("masterVolume", Audiolistener.volume);
-        StartCoroutine(ConfirmationBox());
+        PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
+        StartCoroutine(ComfirmationBox());
     }   
-    public IEnumerator ConfirmationBox()
+    public IEnumerator ComfirmationBox()
     {
-        confirmationPrompt.setActive(true);
+        comfirmationPrompt.SetActive(true);
         yield return new WaitForSeconds(2);
-        confirmationPrompt.setActive(false);
+        comfirmationPrompt.SetActive(false);
     }
 }
 
