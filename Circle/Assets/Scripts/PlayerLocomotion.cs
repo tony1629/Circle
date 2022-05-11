@@ -96,7 +96,7 @@ namespace AL
 
             float speed = movementSpeed;
 
-            if (inputHandler.sprintFlag)
+            if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5f)
             {
                 speed = sprintSpeed;
                 playerManager.isSprinting = true;
@@ -104,7 +104,16 @@ namespace AL
             }
             else
             {
-                moveDirection *= speed;
+                if(inputHandler.moveAmount < 0.5f)
+                {
+                    moveDirection *= speed;
+                    playerManager.isSprinting = false;
+                }
+                else
+                {
+                    moveDirection *= speed;
+                    playerManager.isSprinting = false;
+                }
             }
 
 
@@ -127,7 +136,7 @@ namespace AL
             if (inputHandler.rollFlag)
             {
                 moveDirection = cameraObject.forward * inputHandler.vertical;
-                moveDirection = cameraObject.right * inputHandler.horizontal;
+                moveDirection += cameraObject.right * inputHandler.horizontal;
 
                 if (inputHandler.moveAmount > 0)
                 {
@@ -218,7 +227,7 @@ namespace AL
             {
                 if(playerManager.isInteracting || inputHandler.moveAmount > 0)
                 {
-                    myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime);
+                    myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime / 0.1f);
                 }
                 else
                 {

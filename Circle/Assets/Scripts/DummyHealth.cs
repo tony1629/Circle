@@ -15,15 +15,6 @@ void Start()
         DummyHealthBar.SetMaxHealth(DummyMaxHealth);
     }
 
-    // Update is called once per frame
-
-void Update()
-    {
-        
-        {
-      
-        }
-    }
     public void DummyTakeDamage(int damage)
     {
         DummyCurrentHealth -= damage;
@@ -31,10 +22,9 @@ void Update()
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "john")
+        if (other.gameObject.tag == "Sword")
         {
             DummyTakeDamage(25);
-
         }
     }
 }
