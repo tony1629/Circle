@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\CameraHandler.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\WeaponItem.cs" />
+     <Compile Include="Assets\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\DummyHealth.cs" />
      <Compile Include="Assets\Scripts\AnimatorHandler.cs" />
