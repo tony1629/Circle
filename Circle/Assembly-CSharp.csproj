@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Boss Scripts\EventColliderBeginBossFight.cs" />
     <Compile Include="Assets\Scripts\InputHandler.cs" />
     <Compile Include="Assets\SiuniaevCharacters\02_Golem\Scripts\CharacterRotator.cs" />
     <Compile Include="Assets\Boss Scripts\Boss_Enrage.cs" />
@@ -72,9 +73,9 @@
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Boss Scripts\Boss.cs" />
     <Compile Include="Assets\Boss Scripts\BossHealth.cs" />
-    <Compile Include="Assets\Boss Scripts\Boss_Run.cs" />
-    <Compile Include="Assets\Boss Scripts\EventColliderBeginBossFight.cs" />
     <Compile Include="Assets\Boss Scripts\WorldEventManager.cs" />
+    <Compile Include="Assets\Boss Scripts\Boss_Run.cs" />
+    <Compile Include="Assets\Boss Scripts\UIBossHealthBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\dummy.txt" />
