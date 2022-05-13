@@ -48,7 +48,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
-     <Compile Include="Assets\Scripts\ResetIsInteracting.cs" />
      <Compile Include="Assets\Scripts\InputHandler.cs" />
      <Compile Include="Assets\Art&amp;Animations\SiuniaevCharacters\02_Golem\Scripts\CharacterRotator.cs" />
      <Compile Include="Assets\Scripts\PlayerInventory.cs" />

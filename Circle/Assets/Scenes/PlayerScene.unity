@@ -809,6 +809,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0830e328cb627429ea441a2705ee12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthLevel: 10
+  maxHealth: 0
+  currentHealth: 0
+  healthbar: {fileID: 1686087070}
 --- !u!114 &1200566984
 MonoBehaviour:
   m_ObjectHideFlags: 0
