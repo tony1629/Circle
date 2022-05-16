@@ -13,6 +13,7 @@ namespace SG
         private void Awake()
         {
             slider = GetComponentInChildren<Slider>();
+            bossName = GetComponentInChildren<Text>();
         }
         private void Start()
         {
@@ -28,7 +29,7 @@ namespace SG
         }
         public void SetHealthBarToInactive()
         {
-
+            slider.gameObject.SetActive(false);
         }
         public void SetBossMaxHealth(int maxHealth)
         {
