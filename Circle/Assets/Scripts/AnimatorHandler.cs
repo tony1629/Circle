@@ -6,7 +6,7 @@ namespace AL
 {
     public class AnimatorHandler : MonoBehaviour
     {
-        PlayerManager playerManager;
+        public PlayerManager playerManager;
         public Animator anim;
         InputHandler inputHandler;
         PlayerLocomotion playerLocomotion;
@@ -107,7 +107,9 @@ namespace AL
         private void OnAnimatorMove()
         {
             if (playerManager.isInteracting == false)
+            {
                 return;
+            }
 
             float delta = Time.deltaTime;
             playerLocomotion.rigidBody.drag = 0;
