@@ -11,6 +11,8 @@ namespace AL
         public int currentHealth;
 
         public HealthBar healthbar;
+
+        AnimatorHandler animaterHandler;
         
         void Start()
         {
@@ -30,6 +32,8 @@ namespace AL
             currentHealth = currentHealth - damage;
 
             healthbar.SetHealth(currentHealth);
+
+            animaterHandler.PlayTargetAnimation("Damage_01", true);
         }
     }
 }
