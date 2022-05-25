@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SG
 {
-    public class EnemyStats : MonoBehaviour
+    public class EnemyStats : CharacterStats
     {
         EnemyAnimatorManager enemyAnimatorManager;
         EnemyBossManager enemyBossManager;
@@ -42,9 +42,9 @@ namespace SG
             {
                 bossHealthBar.SetHealth(currentHealth);
             }
-            else
+            else if (isBoss && enemyBossManager != null)
             {
-                enemyBossManager.
+                enemyBossManager.UpdateBossHealthBar(currentHealth);
             }
             
             enemyAnimatorManager.PlayTargetAnimation(damageAnimation, true);

@@ -79,6 +79,10 @@
     <Compile Include="Assets\Boss Scripts\WorldEventManager.cs" />
     <Compile Include="Assets\Boss Scripts\Boss_Run.cs" />
     <Compile Include="Assets\Boss Scripts\UIBossHealthBar.cs" />
+    <Compile Include="Assets\Boss Scripts\CharacterStats.cs" />
+    <Compile Include="Assets\Boss Scripts\PlayerStats.cs" />
+    <Compile Include="Assets\Boss Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Boss Scripts\PlayerAnimatorManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\dummy.txt" />
