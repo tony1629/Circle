@@ -29,7 +29,8 @@ namespace SG
         }
         private int SetMaxHealthFromHealthLevel()
         {
-
+            maxHealth = healthLevel * 10;
+            return maxHealth;
         }
         public void TakeDamageNoAnimation(int damage)
         {
