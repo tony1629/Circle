@@ -12,7 +12,12 @@ namespace AL
 
         public HealthBar healthbar;
 
-        AnimatorHandler animaterHandler;
+        AnimatorHandler animatorHandler;
+
+        private void Awake()
+        {
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        }
         
         void Start()
         {
@@ -33,7 +38,14 @@ namespace AL
 
             healthbar.SetHealth(currentHealth);
 
-            animaterHandler.PlayTargetAnimation("Damage_01", true);
+            animatorHandler.PlayTargetAnimation("Damage_01", true);
+
+            if(currentHealth <= 0)
+            {
+                currentHealth = 0;
+                animatorHandler.PlayTargetAnimation("Dead_01", true);
+                //Handle Player Death
+            }
         }
     }
 }
