@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
+namespace AL
 {
     public class PlayerStats : CharacterStats
     {
         PlayerManager playerManager;
         HealthBar healthBar;
-        PlayerAnimatorManager animatorHandler;
+        AnimatorHandler animatorHandler;
 
         private void Awake()
         {

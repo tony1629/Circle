@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SG
+namespace AL
 {
     public class UIEnemyHealthBar : MonoBehaviour
     {
         Slider slider;
-        float timeUntilBarIsHidden = 3;
+        float timeUntilBarIsHidden = 0;
         private void Awake()
         {
             slider = GetComponentInChildren<Slider>();
@@ -28,21 +28,24 @@ namespace SG
         private void Update()
         {
             timeUntilBarIsHidden = timeUntilBarIsHidden - Time.deltaTime;
-            if(timeUntilBarIsHidden <= 0)
+            if (slider != null)
             {
-                timeUntilBarIsHidden = 0;
-                slider.gameObject.SetActive(false);
-            }
-            else
-            {
-                if (!slider.gameObject.activeInHierarchy)
+                if (timeUntilBarIsHidden <= 0)
                 {
-                    slider.gameObject.SetActive(true);
+                    timeUntilBarIsHidden = 0;
+                    slider.gameObject.SetActive(false);
                 }
-            }
-            if(slider.value <= 0)
-            {
-                Destroy(slider.gameObject);
+                else
+                {
+                    if (!slider.gameObject.activeInHierarchy)
+                    {
+                        slider.gameObject.SetActive(true);
+                    }
+                }
+                if (slider.value <= 0)
+                {
+                    Destroy(slider.gameObject);
+                }
             }
         }
     }

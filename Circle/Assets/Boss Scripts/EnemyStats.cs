@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
+namespace AL
 {
     public class EnemyStats : CharacterStats
     {
         EnemyAnimatorManager enemyAnimatorManager;
         EnemyBossManager enemyBossManager;
-        public UIBossHealthBar bossHealthBar;
+        
+        public UIEnemyHealthBar enemyHealthBar;
         public bool isBoss;
 
 
@@ -23,7 +24,7 @@ namespace SG
         {
            if (!isBoss)
             {
-                bossHealthBar.SetBossMaxHealth(maxHealth);
+                enemyHealthBar.SetMaxHealth(maxHealth);
             }
             
         }
@@ -34,14 +35,20 @@ namespace SG
         }
         public void TakeDamageNoAnimation(int damage)
         {
-
+            currentHealth = currentHealth - damage;
+            enemyHealthBar.SetHealth(currentHealth);
+            if(currentHealth <= 0)
+            {
+                currentHealth = 0;
+                isDead = true;
+            }
         }
         public override void TakeDamage(int damage, string damageAnimation = "Damage_01")
         {
             base.TakeDamage(damage, damageAnimation = "Damage_01");
             if (!isBoss)
             {
-                bossHealthBar.SetHealth(currentHealth);
+                enemyHealthBar.SetHealth(currentHealth);
             }
             else if (isBoss && enemyBossManager != null)
             {
@@ -54,6 +61,12 @@ namespace SG
             {
                 HandleDeath();
             }
+        }
+        private void HandleDeath()
+        {
+            currentHealth = 0;
+            enemyAnimatorManager.PlayTargetAnimation("Dead_01", true);
+            isDead = true;
         }
     }
 }

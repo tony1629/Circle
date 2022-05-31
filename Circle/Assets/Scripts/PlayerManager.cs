@@ -13,11 +13,12 @@ namespace AL
         PlayerLocomotion playerLocomotion;
 
         public bool isInteracting;
-
+        public bool isInvulnerable;
         [Header("PlayerFlags")]
         public bool isSprinting;
         public bool isInAir;
         public bool isGrounded;
+        
 
         private void Awake()
         {

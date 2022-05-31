@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAnimatorManager : MonoBehaviour
+namespace AL
 {
-    // Start is called before the first frame update
-    void Start()
+    public class EnemyAnimatorManager : AnimatorManager
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
+
