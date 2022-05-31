@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace AL
+namespace EL
 {
     public class UIBossHealthBar : MonoBehaviour
     {

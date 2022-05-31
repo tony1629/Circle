@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-namespace AL
+namespace EL
 {
     public class EnemyLocomotionManager : MonoBehaviour
     {
@@ -10,9 +11,12 @@ namespace AL
         public LayerMask detectionLayer;
         public CharacterStats currentTarget;
         EnemyAnimatorManager enemyAnimatorManager;
+        NavMeshAgent navMeshAgent;
         private void Awake()
         {
             enemyManager = GetComponent<EnemyManager>();
+            enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
+            navMeshAgent = GetComponentInChildren<NavMeshAgent>();
         }
         public void HandleDetection()
         {
@@ -41,8 +45,10 @@ namespace AL
 
             if (enemyManager.isPerformingAction)
             {
-
+                enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
+                navMeshAgent.enabled = false;
             }
+
         }
     }
 

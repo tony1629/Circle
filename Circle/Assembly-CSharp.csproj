@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Boss Scripts\EventColliderBeginBossFight.cs" />
+    <Compile Include="Assets\Boss Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\InputHandler.cs" />
     <Compile Include="Assets\SiuniaevCharacters\02_Golem\Scripts\CharacterRotator.cs" />
     <Compile Include="Assets\Boss Scripts\PlayerManager.cs" />
@@ -67,16 +68,19 @@
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\CameraHandler.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\CharacterManager.cs" />
     <Compile Include="Assets\Scripts\DummyHealth.cs" />
     <Compile Include="Assets\Scripts\AnimatorHandler.cs" />
     <Compile Include="Assets\Scripts\PlayerLocomotion.cs" />
     <Compile Include="Assets\Boss Scripts\UIEnemyHealthBar.cs" />
     <Compile Include="Assets\Scripts\ResetIsInteracting.cs" />
     <Compile Include="Assets\Boss Scripts\EnemyBossManager.cs" />
+    <Compile Include="Assets\Boss Scripts\AnimatorManager.cs" />
     <Compile Include="Assets\SiuniaevCharacters\02_Golem\Scripts\AnimationButton.cs" />
     <Compile Include="Assets\Boss Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Boss Scripts\EnemyStats.cs" />
+    <Compile Include="Assets\Boss Scripts\EnemyLocomotionManager.cs" />
     <Compile Include="Assets\Boss Scripts\Boss.cs" />
     <Compile Include="Assets\Boss Scripts\CharacterStats.cs" />
     <Compile Include="Assets\Boss Scripts\BossHealth.cs" />
@@ -84,10 +88,10 @@
     <Compile Include="Assets\Boss Scripts\WorldEventManager.cs" />
     <Compile Include="Assets\Boss Scripts\Boss_Run.cs" />
     <Compile Include="Assets\Boss Scripts\UIBossHealthBar.cs" />
-    <Compile Include="Assets\Boss Scripts\EnemyManager.cs" />
-    <Compile Include="Assets\Scripts\CharacterManager.cs" />
-    <Compile Include="Assets\Boss Scripts\EnemyLocomotionManager.cs" />
-    <Compile Include="Assets\Scripts\AnimatorManager.cs" />
+    <Compile Include="Assets\Boss Scripts\AnimatorHandler.cs" />
+    <Compile Include="Assets\Boss Scripts\PlayerLocomotion.cs" />
+    <Compile Include="Assets\Boss Scripts\InputHandler.cs" />
+    <Compile Include="Assets\Boss Scripts\CameraHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\dummy.txt" />

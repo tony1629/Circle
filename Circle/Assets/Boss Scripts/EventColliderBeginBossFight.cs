@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG { 
+namespace EL { 
 
     public class EventColliderBeginBossFight : MonoBehaviour
     {
