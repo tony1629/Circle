@@ -18,7 +18,12 @@ namespace EL
         }
         private void Update()
         {
+            
+        }
+        private void FixedUpdate()
+        {
             HandleCurrentAction();
+
         }
         private void HandleCurrentAction()
         {
@@ -26,6 +31,10 @@ namespace EL
             {
                 enemyLocomotionManager.HandleDetection();
             }
+            else
+            {
+                enemyLocomotionManager.HandleMoveToTarget();
+                            }
         }
     }
 }

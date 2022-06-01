@@ -12,6 +12,9 @@ namespace EL
         public CharacterStats currentTarget;
         EnemyAnimatorManager enemyAnimatorManager;
         NavMeshAgent navMeshAgent;
+
+        public float distanceFromTarget;
+        public float stoppingDistance = 0.5f ;
         private void Awake()
         {
             enemyManager = GetComponent<EnemyManager>();
@@ -41,6 +44,7 @@ namespace EL
         public void HandleMoveToTarget()
         {
             Vector3 targetDirection = currentTarget.transform.position - transform.position;
+            distanceFromTarget = Vector3.Distance(currentTarget.transform.position, transform.position);
             float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
 
             if (enemyManager.isPerformingAction)
@@ -48,7 +52,15 @@ namespace EL
                 enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
                 navMeshAgent.enabled = false;
             }
-
+            else
+            {
+                if(distanceFromTarget > stoppingDistance)
+                {
+                    enemyAnimatorManager.anim.SetFloat("Vertical", 1, 0.1f, Time.deltaTime);
+                }
+            }
+            navMeshAgent.transform.localPosition = Vector3.zero;
+            navMeshAgent.transform.localRotation = Quaternion.identity;
         }
     }
 
