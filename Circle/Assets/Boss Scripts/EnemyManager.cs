@@ -31,11 +31,25 @@ namespace EL
             {
                 enemyLocomotionManager.HandleDetection();
             }
-            else
+            else if(enemyLocomotionManager.distanceFromTarget > enemyLocomotionManager.stoppingDistance)
             {
                 enemyLocomotionManager.HandleMoveToTarget();
-                            }
+            }
+            else if (enemyLocomotionManager.distanceFromTarget <= enemyLocomotionManager.stoppingDistance)
+            {
+                //Handle our attack
+            }
         }
+
+
+        #region Attacks
+        private void GetNewAttack()
+        {
+            Vector3 targetsDirection = enemyLocomotionManager.currentTarget.transform.position - transform.position;
+        }
+        #endregion
+
+
     }
 }
 
