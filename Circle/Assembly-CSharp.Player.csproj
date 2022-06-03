@@ -94,6 +94,11 @@
     <Compile Include="Assets\Boss Scripts\Boss_Run.cs" />
     <Compile Include="Assets\Boss Scripts\UIBossHealthBar.cs" />
     <Compile Include="Assets\Boss Scripts\EnemyAction.cs" />
+    <Compile Include="Assets\Boss Scripts\State.cs" />
+    <Compile Include="Assets\Boss Scripts\IdleState.cs" />
+    <Compile Include="Assets\Boss Scripts\AttackState.cs" />
+    <Compile Include="Assets\PursueTargetState.cs" />
+    <Compile Include="Assets\CombatStanceState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\dummy.txt" />

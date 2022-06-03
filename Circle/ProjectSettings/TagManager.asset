@@ -6,6 +6,7 @@ TagManager:
   tags:
   - player
   - Boss
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Boss
   - whatIsGround
   - whatIsPlayer
-  - 
+  - Enemy
   - Controller
   - Character
   - 
