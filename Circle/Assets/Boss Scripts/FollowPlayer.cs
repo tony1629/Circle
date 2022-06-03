@@ -7,7 +7,7 @@ public class FollowPlayer : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
-    public LayerMask whatIsGround, whatIsPlayer;
+    public LayerMask whatIsGround, Character;
     public float health;
     //patroling
     public Vector3 walkPoint;
@@ -36,8 +36,8 @@ public class FollowPlayer : MonoBehaviour
     {
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         //Check for sight and attack range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, Character);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, Character);
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }

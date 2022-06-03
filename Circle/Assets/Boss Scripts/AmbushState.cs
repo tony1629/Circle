@@ -10,12 +10,12 @@ namespace EL
         public float detectionRadius= 2;
         public string sleepAnimation;
         public string wakeAnimation;
-        LayerMask detectionLayer;
+        public LayerMask detectionLayer;
 
         public PursueTargetState pursueTargetState;
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
-            if(isSleeping && enemyManager.isPerformingAction == false)
+            if(isSleeping && enemyManager.isInteracting == false)
             {
                 enemyAnimatorManager.PlayTargetAnimation(sleepAnimation, true);
             }

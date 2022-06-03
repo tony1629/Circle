@@ -90,6 +90,7 @@
     <Compile Include="Assets\Boss Scripts\PlayerLocomotion.cs" />
     <Compile Include="Assets\Boss Scripts\EnemyLocomotionManager.cs" />
     <Compile Include="Assets\Boss Scripts\Boss.cs" />
+    <Compile Include="Assets\Boss Scripts\AmbushState.cs" />
     <Compile Include="Assets\Boss Scripts\CharacterStats.cs" />
     <Compile Include="Assets\PursueTargetState.cs" />
     <Compile Include="Assets\Boss Scripts\BossHealth.cs" />
@@ -99,7 +100,6 @@
     <Compile Include="Assets\Boss Scripts\Boss_Run.cs" />
     <Compile Include="Assets\Boss Scripts\UIBossHealthBar.cs" />
     <Compile Include="Assets\Boss Scripts\EnemyAction.cs" />
-    <Compile Include="Assets\Boss Scripts\AmbushState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\dummy.txt" />

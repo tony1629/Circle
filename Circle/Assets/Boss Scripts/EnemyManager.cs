@@ -17,7 +17,7 @@ namespace EL
         public CharacterStats currentTarget;
 
         public bool isPerformingAction;
-        
+        public bool isInteracting;
         public float rotationSpeed = 15;
         public float distanceFromTarget;
         
@@ -50,6 +50,7 @@ namespace EL
         private void Update()
         {
             HandleRecoveryTime();
+            isInteracting = enemyAnimatorManager.anim.GetBool("isInteracting");
         }
         private void FixedUpdate()
         {

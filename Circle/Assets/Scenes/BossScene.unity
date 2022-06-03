@@ -170,6 +170,9 @@ MonoBehaviour:
   detectionRadius: 2
   sleepAnimation: Sleep
   wakeAnimation: Get Up
+  detectionLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   pursueTargetState: {fileID: 39825978}
 --- !u!1 &39825976
 GameObject:
@@ -2107,6 +2110,11 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 2960802168919317401, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
   m_PrefabInstance: {fileID: 116166858}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1211740588 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5590391514773203382, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
+  m_PrefabInstance: {fileID: 116166858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1211740589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,6 +2245,7 @@ MonoBehaviour:
   currentState: {fileID: 2051059113}
   currentTarget: {fileID: 0}
   isPerformingAction: 0
+  isInteracting: 0
   rotationSpeed: 15
   distanceFromTarget: 0
   maximumAttackRange: 1.5
@@ -2268,6 +2277,37 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 2960802168919317401, guid: 6e0c5cce37f2c2d46be4b529ba641d2a, type: 3}
   m_PrefabInstance: {fileID: 2049148460}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1382527643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382527635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3036216a0a78aa4d892e8d9a6dbe859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1382527636}
+  player: {fileID: 1211740588}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  Character:
+    serializedVersion: 2
+    m_Bits: 2048
+  health: 0
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 0
+  timeBetweenAttacks: 0
+  sightRange: 0
+  attackRange: 0
+  playerInSightRange: 0
+  playerInAttackRange: 0
+  speed: 2.5
+  rb: {fileID: 0}
+  boss: {fileID: 0}
 --- !u!1 &1416480851
 GameObject:
   m_ObjectHideFlags: 0

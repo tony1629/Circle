@@ -13,6 +13,10 @@ namespace EL
         int vertical;
         int horizontal;
         public bool canRotate;
+        private void Update()
+        {
+
+        }
 
         public void Initialize()
         {
